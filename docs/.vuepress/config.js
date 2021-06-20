@@ -1,10 +1,24 @@
+const moment = require('moment');
 module.exports = {
+    base: "/docs/",
     title: "薛定谔的时光猫",
     description: "猫的两面性",
     head: [
       ['link', { rel: 'icon', href: './皮卡丘.ico' }],
       ['meta', { name: 'author', content: '狸花猫介绍,狸花猫是中华田园猫' }],
       ['meta', { name: 'keywords', content: '狸花猫介绍,狸花猫是中华田园猫' }]
+    ],
+    plugins: [
+      [
+        '@vuepress/last-updated',
+        {
+          transformer: (timestamp) => {
+            const moment = require('moment')
+            moment.locale("zh-cn")
+            return moment(timestamp).format("LLLL")
+          }
+        }
+      ]
     ],
     themeConfig: {
       lastUpdated: '更新时间',
