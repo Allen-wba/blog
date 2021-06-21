@@ -1,6 +1,6 @@
 const moment = require('moment');
 module.exports = {
-    base: "/blog/",
+    base: "/docs/",
     title: "薛定谔的时光猫",
     description: "猫的两面性",
     head: [
